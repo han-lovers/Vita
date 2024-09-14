@@ -1,7 +1,55 @@
 {% extends './layouts/homeBase.html' %}
 
-{% block 'content' %}
+{% block title %}Inicio - Banorte{% endblock %}
 
-<h1>Home</h1>
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a Banorte</h1>
+        <p>Únete a nosotros y descubre los mejores productos financieros.</p>
+        <a href="{% url 'signup' %}" class="btn-signup">Sign Up</a>
+    </div>
+</section>
 
+<section id="productos" class="productos">
+    <h2>Nuestros productos</h2>
+    <div class="productos-grid">
+        <div class="producto">
+            <h3>Créditos</h3>
+            <p>Créditos hipotecarios, automotrices y personales.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/loans" target="_blank">Más información</a>
+        </div>
+        <div class="producto">
+            <h3>Inversiones</h3>
+            <p>Cuentas de ahorro, inversión y fondos.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/investments" target="_blank">Más información</a>
+        </div>
+        <div class="producto">
+            <h3>Seguros</h3>
+            <p>Protección para tu familia y patrimonio.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/insurance" target="_blank">Más información</a>
+        </div>
+    </div>
+</section>
+
+<section id="tarjetas" class="tarjetas">
+    <h2>Nuestras tarjetas</h2>
+    <div class="tarjetas-grid">
+        <div class="tarjeta">
+            <h3>Tarjeta Oro</h3>
+            <p>Recompensas y beneficios exclusivos.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/cards" target="_blank">Más información</a>
+        </div>
+        <div class="tarjeta">
+            <h3>Tarjeta Platinum</h3>
+            <p>Acceso a experiencias premium.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/cards" target="_blank">Más información</a>
+        </div>
+        <div class="tarjeta">
+            <h3>Tarjeta Básica</h3>
+            <p>La tarjeta que todos pueden tener.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/products-and-services/cards" target="_blank">Más información</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
