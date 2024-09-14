@@ -1,0 +1,12 @@
+{"intents": [
+  {"tag":  "greetings",
+  "patterns":  ["hello", "hey", "hi", "greetings", "what's up?"],
+    "responses": ["Hello!", "Hey!", "What can I do for you", "What's up!", "Hi"]
+  },
+
+  {"tag":  "shop",
+  "patterns":  ["i'd like to buy something", "what are your products?", "what do you recomend?", "what are you selling?", "products?"],
+    "responses": ["NADAA", "Muerete", "Barbie se va a casar con Andres", "ya no quiero", "espero funcione o me mato"]
+  }
+]
+}
