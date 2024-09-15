@@ -9,4 +9,10 @@
 - <h2>pytesseract 0.3.13 (pip install pytesseract)</h2>
 - <h2>pandas 2.2.2 (pip install pandas)</h2>
 - <h2>openai 1.30.1 (pip install openai)</h2>
+- <h2>numpy 1.26.4 (pip install numpy)</h2>
+- <h2>nltk 3.9.1 (pip install nltk)</h2>
+- <h2>(python -m nltk.downloader popular)  "CUANDO LO CORRAS TAL VEZ TE PIDE QUE INSTALE MAS :) SOLO HAZLO"</h2> 
+- <h2>keras 3.5.0 (pip install keras) </h2>
+- <h2>tensorflow 2.17.0 (pip install tensorflow)</h2>
+
 
