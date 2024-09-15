@@ -63,6 +63,10 @@ def signup_user(request):
         return render(request, 'signupUser.html', {
             'form': UserForm,
         })
+    if(request.method == 'POST'):
+        if(request.POST['password1'] == request.POST['password2']):
+            return redirect('home')
+        
 
 # Ask for face photo
 def face_upload(request):
