@@ -21,11 +21,9 @@ def promedio(trabajo, estado, ocupacionSorted, entidadSorted):
 
     return promedio
 
-def verificacionClase(promedio, edad):
+def verificacionClase(promedio):
     # se verifica la clase a la que pertenece la persona
-    if promedio >= 7 and edad >= 41:
-        return 'Alta'
-    elif promedio >= 7 and edad >= 18 and edad <= 25:
+    if promedio >= 7:
         return 'Alta'
     elif promedio >= 3:
         return 'Media'
@@ -40,13 +38,13 @@ entidad = pd.read_excel('entidad.xlsx')
 entidadSorted = entidad.sort_values(by='Ingresos', ascending=False).reset_index(drop=True)
 entidadSorted = calificacion(entidadSorted)
 
-trabajo = 'Farmacia'
+trabajo = 'Medicina'
 estado = 'Ciudad de México'
 edad = 42
 
 promedio = promedio(trabajo,estado,ocupacionSorted,entidadSorted)
 print(promedio)
-clase = verificacionClase(promedio,edad)
+clase = verificacionClase(promedio)
 print(clase)
 
 if clase == 'Alta':
