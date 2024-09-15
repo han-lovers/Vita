@@ -5,15 +5,39 @@
 	<form  method="POST">
         {% csrf_token %}
         
-		{{form}}
-		
-		
+		<h1>Sign Up</h1>
 		<div>
 			<label for="first_name">Primer nombre</label>
+			<input type="text" name="first_name" id="first_name" placeholder="Name">
 		</div>
-
-
-
+		<div>
+			<label for="middle_name">Segundo nombre</label>
+			<input type="text" name="middle_name" id="middle_name" placeholder="Middle Name">
+		</div>
+		<div>
+			<label for="paternal_last_name">Apellido paterno</label>
+			<input type="text" name="paternal_last_name" id="paternal_last_name" placeholder="Paternal Last Name">
+		</div>
+		<div>
+			<label for="maternal_last_name">Apellido materno</label>
+			<input type="text" name="maternal_last_name" id="maternal_last_name" placeholder="Maternal Last Name">
+		</div>
+		<dib>
+			<label for="age">Edad</label>
+			<input type="number" name="age" id="age" placeholder="Age">
+		</div>
+		<div>
+			<label for="email">Correo electrónico</label>
+			<input type="email" name="email" id="email" placeholder="Email">
+		</div>
+		<div>
+			<label for="password1">Contraseña</label>
+			<input type="password" name="password1" id="password1" placeholder="Password">
+		</div>
+		<div>
+			<label for="password2">Confirmar contraseña</label>
+			<input type="password" name="password2" id="password2" placeholder="Confirm Password">
+		</div>		
 		<button type="submit">Next</button>
     </form>
 </section>
