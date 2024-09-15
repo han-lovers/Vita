@@ -5,30 +5,31 @@
 	<form  method="POST">
         {% csrf_token %}
         
+
 		<h1>Sign Up</h1>
 		<div>
 			<label for="first_name">Primer nombre</label>
-			<input type="text" name="first_name" id="first_name" placeholder="Name">
+			<input type="text" name="first_name" id="first_name" {% if prefill_data.primer_nombre %} value="{{prefill_data.primer_nombre}}" {% endif %} placeholder="Name">
 		</div>
 		<div>
 			<label for="second_name">Segundo nombre</label>
-			<input type="text" name="second_name" id="second_name" placeholder="Second Name">
+			<input type="text" name="second_name" id="second_name" {% if prefill_data.segundo_nombre %} value="{{prefill_data.segundo_nombre}}" {% endif %} placeholder="Second Name">
 		</div>
 		<div>
 			<label for="last_name_father">Apellido paterno</label>
-			<input type="text" name="last_name_father" id="last_name_father" placeholder="Paternal Last Name">
+			<input type="text" name="last_name_father" id="last_name_father" {% if prefill_data.apellido_paterno %} value="{{prefill_data.apellido_paterno}}" {% endif %} placeholder="Paternal Last Name">
 		</div>
 		<div>
 			<label for="last_name_mother">Apellido materno</label>
-			<input type="text" name="last_name_mother" id="last_name_mother" placeholder="Maternal Last Name">
+			<input type="text" name="last_name_mother" id="last_name_mother" {% if prefill_data.apellido_materno %} value="{{prefill_data.apellido_materno}}" {% endif %} placeholder="Maternal Last Name">
 		</div>
 		<dib>
 			<label for="age">Edad</label>
-			<input type="number" name="age" id="age" placeholder="Age">
+			<input type="number" name="age" id="age" {% if prefill_data.edad %} value="{{prefill_data.edad}}" {% endif %} placeholder="Age">
 		</div>
 		<div>
 			<label for="email">Correo electrónico</label>
-			<input type="email" name="email" id="email" placeholder="Email">
+			<input type="email" name="email" id="email"  placeholder="Email">
 		</div>
 		<div>
 			<label for="password1">Contraseña</label>
