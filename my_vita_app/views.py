@@ -81,10 +81,27 @@ def signup(request):
 # Ask for face photo
 def face_upload(request):
     if request.method == 'GET':
-        return render(request, 'faceUpload.html')
+        return render(request, 'faceUpload.html', {
+            'form': ReceiveImageForm(),
+        })
     if request.method == 'POST':
-        pass
- 
+        form = ReceiveImageForm(request.POST, request.FILES)
+        if(form.is_valid()):
+            # Store image in img
+            img = form.cleaned_data['image']
+            
+            # Set into a directory the loaded image
+            upload_dir = os.path.join(settings.MEDIA_ROOT, 'uploads')
+            os.makedirs(upload_dir, exist_ok=True)  # Create the directory if it doesn't exist
+            image_path = os.path.join(upload_dir, img.name)
+
+            # Save the image file
+            with open(image_path, 'wb+') as destination:
+                for chunk in img.chunks():
+                    destination.write(chunk)
+
+
+
 # User Creation Form
 def signup_user(request):
     if(request.method == 'GET'):
