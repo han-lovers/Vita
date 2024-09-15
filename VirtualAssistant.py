@@ -41,12 +41,19 @@ def predict_class(sentence):
 
     results = [[i, result] for i, result in enumerate(res) if result > ERROR_THRESHOLD]
 
+
     #highest probability first
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
 
-    for result in results:
-        return_list.append({'intent': classes[result[0]], 'probability': str(result[1])})
+    #for result in results:
+        #return_list.append({'intent': classes[result[0]], 'probability': str(result[1])})
+
+    if results:
+        for result in results:
+            return_list.append({'intent': classes[result[0]], 'probability': str(result[1])})
+    else:
+        return_list.append({'intent': 'no_entendido', 'probability': '0'})
 
     return return_list
 
