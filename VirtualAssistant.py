@@ -71,16 +71,17 @@ def get_response(intents_list, intents_json):
 
     return result
 
-print('Habla con tu asistente virtual!')
+print('Habla con tu asistente virtual! Recuerda que al hablar con él estás aceptando nuestro Aviso de Privacidad')
+print('Le puedes hacer preguntas como: Que servicios ofrece Banorte?, Como activar mi tarjeta de credito Banorte?, Como solicitar un credito en Banorte?, etc.')
 
 while True:
-    message = input('You: ')
+    message = input('\nTu: ')
     ints = predict_class(message)
     res = get_response(ints, intents)
-    print(f'Bot: {res}')
+    print(f'Asistente virtual: {res}')
 
     if ints and ints[0]['intent'] == 'despedida':
-        print("Estas seguro que quieres salir? (si/no): ")
+        print("\nEstas seguro que quieres salir? (si/no): ")
         res = input()
         if res == 'si' or res == 's' or res == 'yes' or res == 'y' or res == 'Si' or res == 'S' or res == 'Yes' or res == 'Y'or res == 'SI' or  res == 'YES':
             break
