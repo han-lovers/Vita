@@ -1,0 +1,132 @@
+{% extends 'layouts/jovenPobreBase.html' %}
+
+{% block title %}Menu Principal{% endblock %}
+
+{% block 'content' %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+    h1 {
+        color: #333;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 36px;
+    }
+    .service-button {
+        background-color: #ff0000;
+        color: #fff;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+    .service-button:hover {
+        background-color: #0056b3;
+    }
+    .top-left, .top-right, .bottom-left, .bottom-right {
+        position: absolute;
+    }
+    .top-left {
+        top: 80px;
+        left: 30px;
+    }
+    .top-right {
+        top: 80px;
+        right: 30px;
+    }
+    .bottom-left {
+        bottom: 80px;
+        left: 30px;
+    }
+    .bottom-right {
+        bottom: 80px;
+        right: 30px;
+    }
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .input-section {
+        margin: 20px 0;
+    }
+    input[type="number"] {
+        padding: 12px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    #photo {
+        margin-top: 20px;
+        max-width: 100%;
+        height: auto;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<h1>Bank Account Menu</h1>
+
+<div class="top-left">
+    <button class="service-button">Check Balance</button><br><br>
+    <button class="service-button">Transfer Funds</button>
+</div>
+
+<div class="top-right">
+    <button class="service-button">Servicios Recomendados</button><br><br>
+    <button class="service-button">Inversiones</button>
+</div>
+
+<div class="bottom-left">
+    <button class="service-button">Deposit</button><br><br>
+    <button class="service-button">Withdraw</button>
+</div>
+
+<div class="bottom-right">
+    <button class="service-button">Prestamos</button><br><br>
+    <button class="service-button">Cerrar sesion</button>
+</div>
+
+<div class="center">
+    <div class="input-section">
+        <p>Enter your Account Number:</p>
+        <input type="number" id="accountNumber" placeholder="123456">
+        <button class="service-button" onclick="fetchPhoto()">Get Photo</button>
+    </div>
+
+    <img id="photo" alt="Account Holder Photo">
+</div>
+
+<script>
+    function fetchPhoto() {
+        const accountNumber = document.getElementById('accountNumber').value;
+        const photo = document.getElementById('photo');
+
+        if (accountNumber) {
+            // Simulating fetching a photo by account number (you can replace this with actual logic)
+            photo.src = 'https://via.placeholder.com/250?text=Photo+of+Account+' + accountNumber;
+            photo.style.display = 'block';
+        } else {
+            alert('Please enter an account number.');
+        }
+    }
+</script>
+{% endblock %}
