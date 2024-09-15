@@ -24,13 +24,13 @@ def promedio(trabajo, estado, ocupacionSorted, entidadSorted):
 def verificacionClase(promedio, edad):
     # se verifica la clase a la que pertenece la persona
     if promedio >= 7 and edad >= 41:
-        return 'Clase A'
+        return 'Alta'
     elif promedio >= 7 and edad >= 18 and edad <= 25:
-        return 'Clase A'
+        return 'Alta'
     elif promedio >= 3:
-        return 'Clase B'
+        return 'Media'
     else:
-        return 'Clase C'
+        return 'Baja'
 
 ocupacion = pd.read_excel('ocupacion.xlsx')
 ocupacionSorted = ocupacion.sort_values(by='Ingresos', ascending=False).reset_index(drop=True)
