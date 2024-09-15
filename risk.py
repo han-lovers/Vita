@@ -113,8 +113,8 @@ class riskProfile:
         plt.grid(True)
         plt.show()
 
-    def mostrar_explicacion(self):
-        print(self.explicacion)
+    def get_explicacion(self):
+        return(self.explicacion)
 
 
 # Ejemplo de uso
