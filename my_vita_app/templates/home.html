@@ -1,0 +1,35 @@
+{% extends 'layouts/homeBase.html' %}
+
+{% block title %}Inicio - Banorte{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a Banorte</h1>
+        <p>Únete a nosotros y descubre los mejores productos financieros.</p>
+        <a href="{% url 'signup' %}" class="btn-signup">Sign Up</a>
+    </div>
+</section>
+
+<section id="productos" class="productos">
+    <h2>Nuestros productos</h2>
+    <div class="productos-grid">
+        <div class="producto">
+            <h3>Créditos</h3>
+            <p>Créditos hipotecarios, automotrices y personales.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/Home/creditos/credito-hipotecario" target="_blank">Más información</a>
+        </div>
+        <div class="producto">
+            <h3>Inversiones</h3>
+            <p>Cuentas de ahorro, inversión y fondos.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/Home/inversion-ahorro/fondos-de-inversion" target="_blank">Más información</a>
+        </div>
+        <div class="producto">
+            <h3>Seguros</h3>
+            <p>Protección para tu familia y patrimonio.</p>
+            <a href="https://www.banorte.com/wps/portal/banorte/Home/inicio/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi3Y0MLTyMnQ28_QNCjQ0cnf1DnQNMXYxCzMz1wwkpiAJKG-AAjgZA_VFgJc7ujh4m5j4GBv4m7kYGjhZ-XibBppZGBp5mUAV4zCjIjTDIdFRUBADVkOkP/?uri=nm:oid:proteccion-integral" target="_blank">Más información</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

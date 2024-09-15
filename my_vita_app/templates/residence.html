@@ -1,0 +1,40 @@
+{% extends 'layouts/signupUserBase.html' %}
+
+{% block 'content' %}
+<section class="signup-section">
+	<form  method="POST">
+        {% csrf_token %}
+        
+		<h1>Sign Up</h1>
+		<div>
+			<label for="street">Street</label>
+			<input type="text" name="street" id="street" placeholder="Street">
+		</div>
+		<div>
+			<label for="houseNum">House Number</label>
+			<input type="number" name="houseNum" id="houseNum" placeholder="House Number">
+		</div>
+		<div>
+			<label for="interiorNum">Numero Interior</label>
+			<input type="number" name="interiorNum" id="interiorNum" placeholder="Numero Interior">
+		</div>
+        <div>
+            <label for="colonia">Colonia</label>
+            <input type="text" name="colonia" id="colonia" placeholder="Colonia">
+        </div>
+        <div>
+            <label for="postalCode">Codigo Postal</label>
+            <input type="number" name="postalCode" id="postalCode" placeholder="Codigo Postal">
+        </div>
+        <div>
+            <label for="municipio">Municipio</label>
+            <input type="text" name="municipio" id="municipio" placeholder="Municipio">
+        </div>
+        <div>
+            <label for="estado">Estado</label>
+            <input type="text" name="estado" id="estado" placeholder="Estado">
+        </div>
+		<button type="submit">Next</button>
+    </form>
+</section>
+{% endblock %}

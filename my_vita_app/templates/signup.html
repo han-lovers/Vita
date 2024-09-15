@@ -1,0 +1,21 @@
+{% extends 'layouts/signupIneBase.html' %}
+
+{% block title %}Sign Up - Banorte{% endblock %}
+
+{% block content %}
+<section class="signup-section">
+	<form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+		{% if error %}
+			{# SHOW ERROR #}
+			{{error}}
+		{% endif %}
+
+        <label for="photo">Sube una foto de tu INE</label>
+		{{form.image}}
+		{# <input type="image" id="photo" name="photo" accept="image/*" required> #}
+        <button type="submit">Upload Photo</button>
+    </form>
+</section>
+{% endblock %}
