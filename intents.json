@@ -1,0 +1,158 @@
+{
+  "intents": [
+    {
+      "tag": "saludos",
+      "patterns": [
+        "Hola", "hola", "Hola!", "hola!", "hola", "hola", "buenos dias", "buenos dias", "buenos dias!", "buenos dias!", "buenas noches", "buenas noches!", "que onda", "que onda", "que tal", "hola que tal", "saludos", "buen dia", "buenas", "holi", "hey", "holaaa", "hola buen dia", "hola como estas", "como estas", "hello", "hi"
+      ],
+      "responses": ["Hola!", "Buenos dias!", "Que puedo hacer por ti?", "Hola! Como estas? En que puedo ayudarte hoy?", "Espero estes muy bien! Que puedo hacer por ti?"]
+    },
+    {
+      "tag": "despedida",
+      "patterns": [
+        "Adios", "adios", "Adios!", "adios!", "adios", "adios!", "hasta luego", "hasta pronto", "chao", "bye", "nos vemos", "cuidate", "hasta la proxima", "hasta pronto!", "chau", "nos vemos luego", "me voy", "bye bye", "hasta despues"
+      ],
+      "responses": ["Adios!", "Hasta luego!", "Nos vemos!", "Hasta pronto!", "Chao!"]
+    },
+    {
+      "tag": "agradecimiento",
+      "patterns": [
+        "Gracias", "gracias", "Gracias!", "gracias!", "muchas gracias", "mil gracias", "gracias por tu ayuda", "gracias por todo", "te agradezco", "muy amable", "muchas gracias por tu ayuda", "gracias amigo", "te lo agradezco", "gracias por tu tiempo", "gracias por asistir", "se agradece"
+      ],
+      "responses": ["De nada!", "No hay de que!", "Estoy para ayudarte!", "No hay problema!", "Es un placer ayudarte!"]
+    },
+    {
+      "tag": "ayuda",
+      "patterns": [
+        "Ayuda", "ayuda", "Ayuda!", "ayudame", "necesito ayuda", "no entiendo", "no se que hacer", "me puedes ayudar", "ayudame por favor", "no comprendo", "que puedo hacer", "puedes ayudarme", "necesito asistencia", "me puedes explicar", "auxilio", "necesito soporte", "necesito ayuda urgente", "me ayudas"
+      ],
+      "responses": ["Claro! En que puedo ayudarte?", "Estoy aqui para ayudarte!", "Que necesitas?", "En que puedo ayudarte?", "Dime en que necesitas ayuda!"]
+    },
+    {
+      "tag": "informacion",
+      "patterns": [
+        "Que es Banorte", "que es banorte", "cuentame sobre Banorte", "que servicios ofrece Banorte", "banorte informacion", "quien es banorte", "dime sobre banorte", "banorte que es", "banorte servicios", "que hace banorte", "que productos tiene banorte", "info sobre Banorte"
+      ],
+      "responses": ["Banorte es un grupo financiero mexicano, que ofrece servicios bancarios, seguros, pensiones, inversiones y creditos."]
+    },
+    {
+      "tag": "horario",
+      "patterns": [
+        "Cual es el horario de Banorte", "cual es el horario de Banorte", "a que hora abre Banorte", "a que hora cierra Banorte", "horarios de Banorte", "cuando abre Banorte", "cuando cierra Banorte", "horario banorte", "horarios banorte", "banorte que horario tiene", "a que hora abre", "banorte a que hora cierra", "banorte a que hora abre"
+      ],
+      "responses": ["El horario de Banorte es de lunes a viernes de 9:00 a 16:00 horas."]
+    },
+    {
+      "tag": "ubicacion",
+      "patterns": [
+        "Donde esta Banorte", "donde esta Banorte", "cual es la direccion de Banorte", "en que lugar se encuentra Banorte", "cual es la ubicacion de Banorte", "donde hay una sucursal de Banorte", "donde hay un Banorte", "donde queda Banorte", "direccion de Banorte", "ubicacion de Banorte", "banorte donde esta", "banorte sucursales", "donde encuentro un Banorte", "banorte donde queda"
+      ],
+      "responses": ["Banorte tiene sucursales en todo Mexico, puedes encontrar la mas cercana a ti en su pagina web o danlo click aqui :https://www.banorte.com/wps/portal/banorte/Home/sucursales."]
+    },
+    {
+      "tag": "contacto",
+      "patterns": [
+        "Como puedo contactar a Banorte", "como contactar a Banorte", "cual es el telefono de Banorte", "donde puedo encontrar el numero de Banorte", "llamar a Banorte", "telefono de Banorte", "numero de Banorte", "banorte contacto", "como hablar con Banorte", "como puedo contactarlo","banorte servicio al cliente", "banorte atencion a clientes", "banorte atencion al cliente", "quiero contactar a Banorte"
+      ],
+      "responses": ["Nuestros Asesores Personales Banorte te atenderan puntualmente en todas tus necesidades financieras en el momento que lo necesites, ademas de mantener contacto contigo periodicamente. Asimismo puedes hacer una cita en este link: https://www.banorte.com/citas/ o recbir atencion inmediata de un ejecutivo las 24 horas, los 7 dias de la semana al marcar a nuestra Línea Preferente (81 81564444)."]
+    },
+    {
+      "tag": "sugerencias",
+      "patterns": [
+        "Como puedo hacer una sugerencia a Banorte", "donde puedo enviar una queja a Banorte", "donde puedo hacer una sugerencia a Banorte", "tengo quejas", "sugerencia Banorte", "como enviar una sugerencia a Banorte", "quejas Banorte", "sugerencias Banorte", "quiero enviar una queja", "enviar queja a Banorte", "quiero sugerir algo a Banorte", "banorte donde hago una sugerencia", "banorte donde pongo una queja"
+      ],
+      "responses": ["Puedes enviar tus sugerencias o quejas a Banorte a traves de su correo electronico: une@banorte.com o su telefono 800 627 2292."]
+    },
+    {
+      "tag": "activacion",
+      "patterns": [
+        "Como activar mi tarjeta de debito Banorte", "como activar mi tarjeta de credito Banorte", "como activar mi cuenta Banorte", "como se activa la tarjeta de debito", "activar tarjeta Banorte", "activar cuenta Banorte", "activar mi tarjeta de credito", "banorte como activar tarjeta", "banorte como activar cuenta", "quiero activar mi tarjeta", "quiero activar mi cuenta", "activar debito Banorte", "activar credito Banorte"
+      ],
+      "responses": ["Puedes activar tu tarjeta de debito o credito Banorte llamando al numero de atencion a clientes o en la sucursal mas cercana. Tambien te dejo este manual que explica como activar tu tarjeta de debito: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/activa-tu-tarjeta-de-debito  y este manual para la de credito: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/activacion-de-tarjeta-de-credito."]
+    },
+    {
+      "tag": "bloqueo",
+      "patterns": [
+        "Como bloquear mi tarjeta de debito Banorte", "como bloquear mi tarjeta de credito Banorte", "como bloquear mi cuenta Banorte", "como se bloquea la tarjeta de debito", "bloquear tarjeta Banorte", "bloquear cuenta Banorte", "bloquear mi tarjeta de credito", "banorte como bloquear tarjeta", "banorte como bloquear cuenta", "quiero bloquear mi tarjeta", "quiero bloquear mi cuenta", "bloquear debito Banorte", "bloquear credito Banorte"
+      ],
+      "responses": ["Puedes bloquear tu tarjeta de debito o credito Banorte llamando al numero de atencion a clientes: 81 8156 960 o en la sucursal mas cercana."]
+    },
+    {
+      "tag": "saldo",
+      "patterns": [
+        "Como consultar mi saldo en Banorte", "como saber cuanto tengo en mi cuenta Banorte", "como ver mi saldo en Banorte", "cuanto dinero tengo", "saldos", "saldo de mi cuenta Banorte", "quiero consultar mi saldo", "banorte saldo", "ver mi saldo en Banorte", "consulta de saldo Banorte", "cuanto tengo en mi cuenta", "banorte consulta de saldo", "como revisar mi saldo", "quiero saber mi saldo"
+      ],
+      "responses": ["Puedes consultar tu saldo en Banorte a traves de la aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil, en cajeros automaticos o en la sucursal mas cercana."]
+    },
+    {
+      "tag": "transferencia",
+      "patterns": [
+        "Como hacer una transferencia en Banorte", "como puedo hacer una transferencia","como enviar dinero a otra cuenta Banorte", "como transferir dinero en Banorte", "como se puede transferir", "donde puedo transferir", "transferencias", "banorte transferencias", "transferir dinero Banorte", "enviar dinero Banorte", "quiero transferir dinero", "banorte como transferir", "quiero hacer una transferencia", "hacer transferencia Banorte"
+      ],
+      "responses": ["Puedes hacer una transferencia en Banorte a traves de la aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil, en cajeros automaticos o en la sucursal mas cercana."]
+    },
+    {
+      "tag": "pago",
+      "patterns": [
+        "Como hacer un pago en Banorte", "como pagar mi tarjeta de credito Banorte", "como realizar un pago en Banorte", "como se puede pagar", "pagos", "banorte pagos", "realizar pagos Banorte", "hacer un pago Banorte", "pagar tarjeta Banorte", "banorte como pagar", "quiero hacer un pago", "banorte como realizar pago", "realizar pago Banorte", "hacer pago Banorte"
+      ],
+      "responses": ["Puedes hacer un pago en Banorte a traves de la aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil, en cajeros automaticos o en la sucursal mas cercana."]
+    },
+    {
+      "tag": "credito",
+      "patterns": [
+        "Como solicitar un credito en Banorte", "como obtener un prestamo en Banorte", "como pedir un credito en Banorte", "como solicitar mi credito en Banorte", "como se puede solicitar un credito", "solicitar credito Banorte", "pedir credito Banorte", "obtener credito Banorte", "quiero un credito Banorte", "banorte como pedir prestamo", "banorte solicitar prestamo", "solicitar prestamo Banorte"
+      ],
+      "responses": ["Puedes solicitar un credito en Banorte a traves de la aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil, en cajeros automaticos o en la sucursal mas cercana. Aqui te dejo informacion sobre sus beneficios: https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/credito-personal/."]
+    },
+    {
+      "tag": "seguridad",
+      "patterns": [
+        "Como proteger mi cuenta en Banorte", "como mantener segura mi tarjeta de credito Banorte", "como evitar fraudes en Banorte", "como se protege mi cuenta", "seguridad", "banorte seguridad", "mantener segura mi cuenta Banorte", "proteccion cuenta Banorte", "como proteger mi cuenta", "banorte como evitar fraudes", "banorte proteccion", "quiero proteger mi cuenta", "fraudes Banorte", "como proteger mi tarjeta"
+      ],
+      "responses": ["Puedes proteger tu cuenta en Banorte manteniendo segura tu informacion personal y no compartiendola con desconocidos. Asimismo, puedes ver este link: https://www.banorte.com/wps/portal/banorte/Home/seguridad-banorte que habla en detalle sobre la seguridad en Banorte."]
+    },
+    {
+      "tag": "reclamacion",
+      "patterns": [
+        "Como hacer una reclamacion en Banorte", "como reportar un cargo no reconocido en Banorte", "como solucionar un problema con Banorte", "reclamar", "reclamacion Banorte", "reportar cargo Banorte", "banorte reclamacion", "quiero reclamar", "banorte reportar problema", "problema con Banorte", "banorte reportar cargo", "solucionar problema Banorte"
+      ],
+      "responses": ["Puedes hacer una reclamacion en Banorte a traves de la aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil, en el correo electronico: une@banorte.com, su teléfono 800 627 2292o o en la sucursal mas cercana."]
+    },
+    {
+      "tag": "promociones",
+      "patterns": [
+        "Que promociones tiene Banorte", "como obtener descuentos en Banorte", "donde puedo encontrar las promociones de Banorte", "promocion", "promociones Banorte", "ofertas Banorte", "descuentos Banorte", "banorte promociones", "banorte ofertas", "promociones de Banorte", "banorte promociones actuales", "banorte promociones vigentes", "quiero saber promociones de Banorte", "banorte promociones tarjeta", "que promociones hay en Banorte"
+      ],
+      "responses": ["Puedes encontrar las promociones de Banorte en su aplicacion movil: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil o en la sucursal mas cercana. Aqui te dejo un enlace que menciona algunas promociones y beneficios: https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/promociones-banorte "]
+    },
+    {
+      "tag": "atencion",
+      "patterns": [
+        "Como contactar a atencion a clientes de Banorte", "como hablar con un ejecutivo de Banorte", "como resolver un problema con Banorte", "llamar", "banorte atencion", "contacto Banorte", "ejecutivo Banorte", "atencion Banorte", "contactar Banorte", "banorte como contactar", "hablar con Banorte", "banorte contacto cliente", "servicio al cliente Banorte", "banorte servicio cliente"
+      ],
+      "responses": ["Nuestros Asesores Personales Banorte te atenderan puntualmente en todas tus necesidades financieras en el momento que lo necesites, ademas de mantener contacto contigo periodicamente. Asimismo puedes hacer una cita en este link: https://www.banorte.com/citas/ o recbir atencion inmediata de un ejecutivo las 24 horas, los 7 dias de la semana al marcar a nuestra Línea Preferente (81 81564444)"]
+    },
+    {
+      "tag": "recomendacion",
+      "patterns": [
+        "Que me recomiendas de Banorte", "cual es el mejor servicio de Banorte", "que opinas de Banorte", "banorte recomendacion", "recomendacion Banorte", "que me puedes decir de Banorte", "me recomiendas Banorte", "banorte recomendacion servicio", "me puedes recomendar Banorte", "que servicios son buenos en Banorte", "banorte que recomiendas", "banorte sugerencias"
+      ],
+      "responses": ["Banorte ofrece una amplia gama de servicios financieros, te recomiendo que explores su pagina web para encontrar el que mejor se adapte a tus necesidades: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/contrata-productos-banorte "]
+    },
+    {
+      "tag": "productos",
+      "patterns": [
+        "Que productos ofrece Banorte", "cuales son los servicios de Banorte", "que puedo contratar en Banorte", "banorte productos", "productos Banorte", "servicios Banorte", "banorte que ofrece", "que servicios tiene Banorte", "que productos tiene Banorte", "banorte servicios disponibles", "banorte productos disponibles", "banorte opciones", "contratar en Banorte", "productos financieros Banorte", "servicios financieros Banorte"
+      ],
+      "responses": ["Banorte ofrece servicios bancarios, seguros, pensiones, inversiones y creditos. En este enlace puedes revisarlos: https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/contrata-productos-banorte"]
+    },
+    {
+      "tag": "inversion",
+      "patterns": [
+        "Como invertir en Banorte", "que opciones de inversion tiene Banorte", "como hacer crecer mi dinero en Banorte", "como funciona la inversion en Banorte", "como puedo invertir en Banorte", "banorte inversion", "inversion Banorte", "fondos de inversion Banorte", "banorte como invertir", "donde invertir Banorte", "banorte opciones de inversion", "invertir en Banorte", "cuentas de inversion Banorte", "inversiones en Banorte", "banorte opciones financieras", "quiero invertir Banorte", "que es un fondo de inversion", "banorte fondos", "banorte como funciona la inversion", "cuentas de inversion"
+      ],
+      "responses": ["Puedes hacerlo en Banorte a traves de fondos de inversion, cetes, acciones, bonos y otros instrumentos financieros. Dale clicl al link para mas informacion: https://www.banorte.com/wps/portal/banorte/Home/inversion-ahorro/instrumentos-inversion/ "]
+    }
+  ]
+}
