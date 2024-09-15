@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect
+from django.conf import settings
 from .forms import ReceiveImageForm, UserForm
+from .models import CustomUser
+from django.core.exceptions import ValidationError
+from django.db.utils import IntegrityError
+from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth.hashers import make_password
 from vita import settings
 from django.http import HttpResponse
 from PIL import Image
 from img_recon.vision_ine import vision_ine
 import os
+import pandas as pd
 
 # Create your views here.
 def home(request):
@@ -40,23 +47,44 @@ def signup(request):
             try:
                  # Load data onto the checker
                 checker.load_data(image_path)
-                # Save data onto a df
-                df = checker.save_data()
-            except ValueError:
+                checker.save_data()
+
+            except ValueError:    
                 return render(request, 'signup.html', {
                     'form': ReceiveImageForm(),
                     'error': "Something went wrong. Please try again!",
                 })
+            # Construye la ruta completa al archivo output.csv
+            csv_path = os.path.join(settings.BASE_DIR, 'output.csv')
 
-            response = HttpResponse("")
-            response.set_cookie('image_data', df, max_age=3600)
+            # Define the directory where `views.py` is located
+            current_directory = os.path.dirname(os.path.abspath(__file__))
 
-            return redirect('signup_user')
+            # Write image_path to a file
+            image_path_file = os.path.join(current_directory, 'image_path.txt')
+            with open(image_path_file, 'w') as file:
+                file.write(image_path)
+
+            # Convert df to JSON or string format before writing
+            df_file = os.path.join(current_directory, 'csv_path.txt')
+            with open(df_file, 'w') as file:
+                file.write(csv_path)
+
+            return redirect('face_upload')
+
         return render(request, 'signup.html', {
             'form': ReceiveImageForm(),
             'error': "Something went wrong. Please try again!",
         })
 
+
+# Ask for face photo
+def face_upload(request):
+    if request.method == 'GET':
+        return render(request, 'faceUpload.html')
+    if request.method == 'POST':
+        pass
+ 
 # User Creation Form
 def signup_user(request):
     if(request.method == 'GET'):
@@ -64,12 +92,39 @@ def signup_user(request):
             'form': UserForm,
         })
     if(request.method == 'POST'):
-        if(request.POST['password1'] == request.POST['password2']):
-            return redirect('home')
-        
+        # Validate if both passwords are correct
+        if(request.POST['password1'] != request.POST['password2']):
+            return render(request, 'signupUser.html', {
+                'error': 'Passwords do not match!',
+            })
+        # Validate password security
+        try:
+            validate_password(request.POST['password1'])
+        except ValidationError as e:
+            return render(request, 'signup.html',  {
+                'form': UserForm,
+                'invalid_password': True,
+                'error': e,
+            })
 
-# Ask for face photo
-def face_upload(request):
-    if request.method == 'POST':
-        uploaded_file = request.FILES.get('photo')
-    return render(request, 'faceUpload.html')
+        #password = make_password(request.POST['password1'])
+
+        # Validate if user already exists
+        try:
+            user_form = UserForm(request.POST)
+            user = user_form.save()
+            #user = CustomUser.objects.create_user(first_name=request.POST['first_name'],
+             #                               second_name=request.POST['second_name'],      
+              #                              last_name_father=request.POST['last_name_father'], 
+               #                             last_name_mother=request.POST['last_name_mother'],
+                #                            age=request.POST['age'],
+                 #                           email=request.POST['email'], 
+                  #                          password=request.POST['password1'])
+            #user.save()
+            return redirect('home')
+        except :
+            return render(request, 'signupUser.html', {
+                'form': UserForm,
+                'error': 'Username already exists',
+            })        
+       return redirect('signup-user')        
