@@ -12,6 +12,7 @@ from PIL import Image
 from img_recon.vision_ine import vision_ine
 from img_recon.contrast import contrast
 import os
+import csv
 import pandas as pd
 
 # Create your views here.
@@ -139,8 +140,25 @@ def face_upload(request):
 # User Creation Form
 def signup_user(request):
     if(request.method == 'GET'):
+        csv_data = []
+        
+
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+
+        with open(f'{current_directory}/csv_path.txt', 'r') as file:
+            csv_path = file.read().strip()
+
+        with open(str(csv_path), newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                csv_data.append(row)  # Each row is a dictionary
+
+        # Assuming you want to use the first row to prefill the inputs
+        prefill_data = csv_data[0] if csv_data else {}  # Get the first row
+        
         return render(request, 'signupUser.html', {
-            'form': UserForm,
+           'form': UserForm,
+           'prefill_data': prefill_data,
         })
     if(request.method == 'POST'):
         # Validate if both passwords are correct
@@ -164,14 +182,7 @@ def signup_user(request):
         try:
             user_form = UserForm(request.POST)
             user = user_form.save()
-            #user = CustomUser.objects.create_user(first_name=request.POST['first_name'],
-             #                               second_name=request.POST['second_name'],      
-              #                              last_name_father=request.POST['last_name_father'], 
-               #                             last_name_mother=request.POST['last_name_mother'],
-                #                            age=request.POST['age'],
-                 #                           email=request.POST['email'], 
-                  #                          password=request.POST['password1'])
-            #user.save()
+            
             return redirect('home')
         except :
             return render(request, 'signupUser.html', {
