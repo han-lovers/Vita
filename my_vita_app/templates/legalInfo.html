@@ -1,0 +1,24 @@
+{% extends 'layouts/signupUserBase.html' %}
+
+{% block 'content' %}
+<section class="signup-section">
+	<form  method="POST">
+        {% csrf_token %}
+        
+		<h1>Sign Up</h1>
+		<div>
+			<label for="curp">CURP</label>
+			<input type="text" name="curp" id="curp" placeholder="CURP">
+		</div>
+		<div>
+			<label for="rfc">RFC</label>
+			<input type="text" name="rfc" id="rfc" placeholder="RFC">
+		</div>
+		<div>
+			<label for="reg_fiscal">Regimen Fiscal</label>
+			<input type="text" name="reg_fiscal" id="reg_fiscal" placeholder="Regimen Fiscal">
+		</div>
+		<button type="submit">Next</button>
+    </form>
+</section>
+{% endblock %}

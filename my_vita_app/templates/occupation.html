@@ -1,0 +1,24 @@
+{% extends 'layouts/signupUserBase.html' %}
+
+{% block 'content' %}
+<section class="signup-section">
+	<form  method="POST">
+        {% csrf_token %}
+        
+		<h1>Sign Up</h1>
+		<div>
+			<label for="profesion">Profesion</label>
+			<input type="text" name="profesion" id="profesion" placeholder="Profesion">
+		</div>
+		<div>
+			<label for="income">Salario</label>
+			<input type="number" name="income" id="income" placeholder="Salario">
+		</div>
+		<div>
+			<label for="student">Estudiante</label>
+			<input type="checkbox" name="student" id="student" placeholder="Estudiante">
+		</div>
+		<button type="submit">Next</button>
+    </form>
+</section>
+{% endblock %}
