@@ -197,6 +197,7 @@ class vision_ine:
             cropped_image = image[y1:y2, x1:x2]
             gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
 
+
             # Save the cropped image
             output_path = f'{rect["name"]}.png'
             cv2.imwrite(output_path, gray)
@@ -303,15 +304,3 @@ class vision_ine:
     def join_dataframes(self):
         self.df = pd.concat([self.df, self.df2], axis=1)
         return
-
-# # Find the index of "IDMEX"
-# index = text.find("IDMEX")
-#
-# # If "IDMEX" is in the text
-# if index != -1:
-#     # Get the 8 characters after "IDMEX"
-#     result = text[index + len("IDMEX"):index + len("IDMEX") + 9]
-#
-#     print(result)
-# else:
-#     print("IDMEX not found in text")
