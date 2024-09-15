@@ -224,7 +224,7 @@ class vision_ine:
         return
     def data_to_text(self, type):
         if type == 'name':
-            image = cv2.imread('name_rect.png')
+            image = cv2.imread('test_images/name_rect.png')
             text = pytesseract.image_to_string(image, config='--psm 6')
 
             clean_name = self.clean_data_with_llm(text, "name")
@@ -233,14 +233,14 @@ class vision_ine:
             return output
 
         elif type == 'curp':
-            image = cv2.imread('curp_rect.png')
+            image = cv2.imread('test_images/curp_rect.png')
             text = pytesseract.image_to_string(image, config='--psm 6')
             clean_curp = self.clean_data_with_llm(text, "curp")
             output = self.extract_with_llm(clean_curp, "curp")
             return output
 
         elif type == 'address':
-            image = cv2.imread('adress_rect.png')
+            image = cv2.imread('test_images/adress_rect.png')
             # Use Tesseract to extract text
             text = pytesseract.image_to_string(image, config='--psm 6')
 
@@ -249,7 +249,7 @@ class vision_ine:
             return output
 
         elif type == 'back':
-            image = cv2.imread('back_rect.png')
+            image = cv2.imread('test_images/back_rect.png')
             # Use Tesseract to extract text
             text = pytesseract.image_to_string(image, config='--psm 6')
             output = self.extract_with_llm(text, "back")
