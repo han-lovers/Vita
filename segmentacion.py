@@ -48,3 +48,10 @@ promedio = promedio(trabajo,estado,ocupacionSorted,entidadSorted)
 print(promedio)
 clase = verificacionClase(promedio,edad)
 print(clase)
+
+if clase == 'Alta':
+    print('opciones A')
+elif clase == 'Media':
+    print('opciones B')
+else:
+    print('opciones C')
