@@ -1,0 +1,20 @@
+{% extends 'layouts/signupUserBase.html' %}
+
+{% block 'content' %}
+<section class="signup-section">
+	<form  method="POST">
+        {% csrf_token %}
+        
+		{{form}}
+		
+		
+		<div>
+			<label for="first_name">Primer nombre</label>
+		</div>
+
+
+
+		<button type="submit">Next</button>
+    </form>
+</section>
+{% endblock %}

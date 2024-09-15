@@ -19,7 +19,9 @@ from django.urls import path
 from my_vita_app import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('templates/signup/', views.signup, name='signup'),
-    path('templates/faceUpload/', views.faceUpload, name='faceUpload'),
+    path('signup/', views.signup, name='signup'),
+    path('face-upload/', views.face_upload, name='face_upload'),
+    path('signup-user/', views.signup_user, name='signup_user'),
 ]
