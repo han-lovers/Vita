@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="signup-section">
-    <form action="/upload" method="post" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 
 		{% if error %}
