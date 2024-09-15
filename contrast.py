@@ -6,6 +6,32 @@ class contrast():
     def __init__(self):
         self.backends = ["opencv", "ssd", "dlib", "mtcnn", "retinaface", "mediapipe"]
 
+    def crop_imgs(self, img_name):
+        image = cv2.imread(img_name)
+
+        # Dimensions of the image
+        height, width, _ = image.shape
+
+        # Define the coordinates of the three red rectangles (based on the given image)
+        # These coordinates are approximations, adjust them if necessary
+        rectangles = [
+            {"name": "photo_rect",
+             "coords": (int(0.05 * width), int(0.22 * height), int(0.32 * width), int(0.67 * height))},
+
+        ]
+
+        # Loop through the rectangles, crop and save each one
+        for rect in rectangles:
+            x1, y1, x2, y2 = rect["coords"]
+            cropped_image = image[y1:y2, x1:x2]
+            gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
+
+            # Save the cropped image
+            output_path = f'{rect["name"]}.png'
+            cv2.imwrite(output_path, gray)
+
+        return
+
     def detect_and_crop_face(self, image_path, output_path):
         # Load the image
         image = cv2.imread(image_path)
@@ -47,3 +73,7 @@ class contrast():
                     return True
 
         return False
+
+
+a = contrast()
+a.crop_imgs('cropped_id_front2.jpeg')
