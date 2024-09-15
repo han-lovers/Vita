@@ -4,11 +4,8 @@ import pickle
 import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer #misma palabra para solo stem
-import tensorflow as tf
 import keras
-from keras import layers
 from tensorflow.keras import layers, models
-#from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
 
@@ -90,7 +87,6 @@ learning_rate_schedule = keras.optimizers.schedules.InverseTimeDecay(initial_lea
 
 sgd = SGD(learning_rate=learning_rate_schedule, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 
-model.save('chatbot_model.keras')
-print('Done')
+model.save('chatbot_model.keras', hist)
