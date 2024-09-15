@@ -17,6 +17,7 @@ model = tf.keras.models.load_model('chatbot_model.h5')
 
 def clean_up_sentence(sentence):
     #tokenize the sentence and words in the sentence
+    sentence = sentence.lower()
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
     return sentence_words
@@ -72,4 +73,9 @@ while True:
     print(f'Bot: {res}')
 
     if ints and ints[0]['intent'] == 'despedida':
-        break
+        print("Estas seguro que quieres salir? (si/no): ")
+        res = input()
+        if res == 'si' or res == 's' or res == 'yes' or res == 'y' or res == 'Si' or res == 'S' or res == 'Yes' or res == 'Y'or res == 'SI' or  res == 'YES':
+            break
+        else:
+            continue

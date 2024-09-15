@@ -21,7 +21,7 @@ ignore_letters = ['?' , '!' , '.' , ',']
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         #getting text and splits it up
-        word_list = nltk.word_tokenize(pattern)
+        word_list = nltk.word_tokenize(pattern.lower())
         words.extend(word_list)
         #the word lists belong to the task
         documents.append((word_list, intent['tag']))
