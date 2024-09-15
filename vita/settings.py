@@ -14,7 +14,7 @@ from pathlib import Path
 import environ
 
 env = environ.Env()
-environ.Env.read_env(Path(__file__).resolve().parent / '.env')
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djongo',
     'my_vita_app',
 ]
 
@@ -81,15 +80,8 @@ WSGI_APPLICATION = 'vita.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': env('MONGO_DB_NAME'),
-        'CLIENT': {
-            'host': env('MONGO_DB_HOST'),
-            'username': env('MONGO_DB_USERNAME'),
-            'password': env('MONGO_DB_PASSWORD'),
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
