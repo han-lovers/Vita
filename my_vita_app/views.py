@@ -35,13 +35,14 @@ def signup(request):
             # Create INE checker
             checker = vision_ine()
             
-            # Load data onto the checker
-            checker.load_data(image_path)
+           
 
             try:
+                 # Load data onto the checker
+                checker.load_data(image_path)
                 # Save data onto a df
                 df = checker.save_data()
-            except:
+            except ValueError:
                 return render(request, 'signup.html', {
                     'form': ReceiveImageForm(),
                     'error': "Something went wrong. Please try again!",
