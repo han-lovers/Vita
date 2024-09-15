@@ -1,14 +1,14 @@
 from django.db import models
 
 # Create your models here.
-class CustomUser(AbstractUser):
-    groups = models.ManyToManyField(
-        'auth.Group',
-        related_name='customuser_groups',  # Unique related_name
-        blank=True
-    )
-    user_permissions = models.ManyToManyField(
-        'auth.Permission',
-        related_name='customuser_permissions',  # Unique related_name
-        blank=True
-    )
+class CustomUser(models.Model):
+    first_name = models.CharField(max_length=50)
+    second_name = models.CharField(max_length=50, blank=True, null=True)
+    last_name_father = models.CharField(max_length=50)
+    last_name_mother = models.CharField(max_length=50, blank=True, null=True)
+    age = models.IntegerField()
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=128) 
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name_father}"
