@@ -34,10 +34,9 @@ words=sorted(set(words))
 
 #print(words)
 
-
 classes = sorted(set(classes))
 
-# save the words and classes in a pickle file
+# save the words and classes in a pickle file to transport data on the network and mantain the thing across sesions
 pickle.dump(words, open('words.pkl', 'wb'))
 pickle.dump(classes, open('classes.pkl', 'wb'))
 
@@ -72,20 +71,30 @@ training = np.array(training, dtype=object)
 train_x = np.array([item[0] for item in training])
 train_y = np.array([item[1] for item in training])
 
+#
 model = keras.Sequential()
 model.add(keras.Input(shape=(len(train_x[0]),)))
+#128 neuronas relacionadas con capa de entrada anterior
+# relu activa cada entrada en n max (0, x) para no linealidad y para patrones más complejos
 model.add(Dense(128, activation='relu'))
+#  drop out para evitar sobreajuste. apaga 50% de las neuronas para que no se ajuste demasiado
 model.add(Dropout(0.5))
+# reduce espacio para representación más estracta
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
+# capa salida para salidas en forma de probabilidad
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
+# determina qué tan grandes son los pasos que da el optimizador al actualizar los pesos.
 initial_learning_rate = 0.01
 decay_steps = 100000
 decay_rate = 1e-6
+# la tasa de aprendizaje disminuye inversamente con el número de pasos
 learning_rate_schedule = keras.optimizers.schedules.InverseTimeDecay(initial_learning_rate, decay_steps, decay_rate)
 
+# optimizador de descenso de gradiente estocástico, suaviza el proceso de optimización
 sgd = SGD(learning_rate=learning_rate_schedule, momentum=0.9, nesterov=True)
+# calcula diferencia entre probabilidades predichas y las verdaderas
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 

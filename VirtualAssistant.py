@@ -6,7 +6,6 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 import tensorflow as tf
 
-
 lemmatizer = WordNetLemmatizer()
 
 intents = json.load(open('intents.json'))
@@ -55,6 +54,8 @@ def get_response(intents_list, intents_json):
     tag = intents_list[0]['intent']
     list_of_intents = intents_json['intents']
 
+    result = "Lo siento, no entiendo lo que quieres decir."
+
     for i in list_of_intents:
         if i['tag'] == tag:
             result = random.choice(i['responses'])
@@ -62,11 +63,13 @@ def get_response(intents_list, intents_json):
 
     return result
 
-print('YAYAYA')
+print('Habla con tu asistente virtual!')
+
 while True:
     message = input('You: ')
-    if message == 'quit':
-        False
     ints = predict_class(message)
-    respuesta = get_response(ints, intents)
-    print(respuesta)
+    res = get_response(ints, intents)
+    print(f'Bot: {res}')
+
+    if ints and ints[0]['intent'] == 'despedida':
+        break

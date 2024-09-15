@@ -1,12 +1,90 @@
 {"intents": [
-  {"tag":  "greetings",
-  "patterns":  ["hello", "hey", "hi", "greetings", "what's up?"],
-    "responses": ["Hello!", "Hey!", "What can I do for you", "What's up!", "Hi"]
+  {"tag":  "saludos",
+    "patterns":  ["hola", "buenos días", "estás?", "que onda", "buenas noches"],
+    "responses": ["Hola!", "Buenos días!", "Qué puedo hacer por  ti?", "Hola! Cómo estás? ¿En qué puedo ayudarte hoy?", "Espero estes muy bien! Que puedo hacer por ti?"]
   },
-
-  {"tag":  "shop",
-  "patterns":  ["i'd like to buy something", "what are your products?", "what do you recomend?", "what are you selling?", "products?"],
-    "responses": ["NADAA", "Muerete", "Barbie se va a casar con Andres", "ya no quiero", "espero funcione o me mato"]
+  {"tag":  "despedida",
+    "patterns":  ["adios", "hasta luego", "nos vemos", "hasta pronto", "chao"],
+    "responses": ["Adios!", "Hasta luego!", "Nos vemos!", "Hasta pronto!", "Chao!"]
+  },
+  {"tag":  "agradecimiento",
+    "patterns":  ["gracias", "muchas gracias", "gracias por tu ayuda", "gracias por todo", "gracias por la ayuda"],
+    "responses": ["De nada!", "No hay de qué!", "Estoy para ayudarte!", "No hay problema!", "No hay de qué!"]
+  },
+  {"tag":  "ayuda",
+    "patterns":  ["ayuda", "necesito ayuda", "ayudame", "no entiendo", "no comprendo", "no entiendo"],
+    "responses": ["Claro! En qué puedo ayudarte?", "Estoy aquí para ayudarte!", "Qué necesitas?", "En qué puedo ayudarte?", "Dime en qué necesitas ayuda!"]
+  },
+  {"tag":  "informacion",
+    "patterns":  ["¿Qué es Banorte?", "Cuéntame sobre Banorte", "¿Qué servicios ofrece Banorte?"],
+    "responses": ["Banorte es un grupo financiero mexicano, que ofrece servicios bancarios, seguros, pensiones, inversiones y créditos."]
+  },
+  {"tag":  "horario",
+    "patterns":  ["¿Cuál es el horario de Banorte?", "¿A qué hora abre Banorte?", "¿A qué hora cierra Banorte?", "Cuales son sus horarios"],
+    "responses": ["El horario de Banorte es de lunes a viernes de 9:00 a 16:00 horas."]
+  },
+  {"tag":  "ubicacion",
+    "patterns":  ["¿Dónde está Banorte?", "¿Cuál es la dirección de Banorte?", "¿En qué lugar se encuentra Banorte?"],
+    "responses": ["Banorte tiene sucursales en todo México, puedes encontrar la más cercana a ti en su página web."]
+  },
+  {"tag":  "contacto",
+    "patterns":  ["¿Cómo puedo contactar a Banorte?", "¿Cuál es el teléfono de Banorte?", "¿Dónde puedo encontrar el número de Banorte?"],
+    "responses": ["Puedes contactar a Banorte a través de su página web o en sus redes sociales."]
+  },
+  {"tag":  "sugerencias",
+    "patterns":  ["¿Cómo puedo hacer una sugerencia a Banorte?", "¿Dónde puedo enviar una queja a Banorte?", "¿Dónde puedo hacer una sugerencia a Banorte?", "tengo quejas"],
+    "responses": ["Puedes enviar tus sugerencias o quejas a Banorte a través de su página web o en sus redes sociales."]
+  },
+  {"tag":  "activacion",
+    "patterns":  ["¿Cómo activar mi tarjeta de débito Banorte?", "¿Cómo activar mi tarjeta de crédito Banorte?", "¿Cómo activar mi cuenta Banorte?", "Como se activa la tarjeta de debito?"],
+    "responses": ["Puedes activar tu tarjeta de débito o crédito Banorte llamando al número de atención a clientes o en la sucursal más cercana."]
+  },
+  {"tag":  "bloqueo",
+    "patterns":  ["¿Cómo bloquear mi tarjeta de débito Banorte?", "¿Cómo bloquear mi tarjeta de crédito Banorte?", "¿Cómo bloquear mi cuenta Banorte?"],
+    "responses": ["Puedes bloquear tu tarjeta de débito o crédito Banorte llamando al número de atención a clientes o en la sucursal más cercana."]
+  },
+  {"tag":  "saldo",
+    "patterns":  ["¿Cómo consultar mi saldo en Banorte?", "¿Cómo saber cuánto tengo en mi cuenta Banorte?", "¿Cómo ver mi saldo en Banorte?"],
+    "responses": ["Puedes consultar tu saldo en Banorte a través de la aplicación móvil, en cajeros automáticos o en la sucursal más cercana."]
+  },
+  {"tag":  "transferencia",
+    "patterns":  ["¿Cómo hacer una transferencia en Banorte?", "¿Cómo enviar dinero a otra cuenta Banorte?", "¿Cómo transferir dinero en Banorte?", "Como se puede tranferir"],
+    "responses": ["Puedes hacer una transferencia en Banorte a través de la aplicación móvil, en cajeros automáticos o en la sucursal más cercana."]
+  },
+  {"tag":  "pago",
+    "patterns":  ["¿Cómo hacer un pago en Banorte?", "¿Cómo pagar mi tarjeta de crédito Banorte?", "¿Cómo realizar un pago en Banorte?", "Como se puede pagar"],
+    "responses": ["Puedes hacer un pago en Banorte a través de la aplicación móvil, en cajeros automáticos o en la sucursal más cercana."]
+  },
+  {"tag":  "credito",
+    "patterns":  ["¿Cómo solicitar un crédito en Banorte?", "¿Cómo obtener un préstamo en Banorte?", "¿Cómo pedir un crédito en Banorte?", "como funciona el credito o crétitos  en Banorte?"],
+    "responses": ["Puedes solicitar un crédito en Banorte a través de la aplicación móvil, en cajeros automáticos o en la sucursal más cercana."]
+  },
+  {"tag":  "seguridad",
+    "patterns":  ["¿Cómo proteger mi cuenta en Banorte?", "¿Cómo mantener segura mi tarjeta de crédito Banorte?", "¿Cómo evitar fraudes en Banorte?", "como se protege mi cuenta"],
+    "responses": ["Puedes proteger tu cuenta en Banorte manteniendo segura tu información personal y no compartiéndola con desconocidos."]
+  },
+  {"tag":  "reclamacion",
+    "patterns":  ["¿Cómo hacer una reclamación en Banorte?", "¿Cómo reportar un cargo no reconocido en Banorte?", "¿Cómo solucionar un problema con Banorte?", "reclamar"],
+    "responses": ["Puedes hacer una reclamación en Banorte a través de la aplicación móvil, en cajeros automáticos o en la sucursal más cercana."]
+  },
+  {"tag":  "promociones",
+    "patterns":  ["¿Qué promociones tiene Banorte?", "¿Cómo obtener descuentos en Banorte?", "¿Dónde puedo encontrar las promociones de Banorte?"],
+    "responses": ["Puedes encontrar las promociones de Banorte en su página web, en la aplicación móvil o en la sucursal más cercana."]
+  },
+  {"tag":  "atencion",
+    "patterns":  ["¿Cómo contactar a atención a clientes de Banorte?", "¿Cómo hablar con un ejecutivo de Banorte?", "¿Cómo resolver un problema con Banorte?"],
+    "responses": ["Puedes contactar a atención a clientes de Banorte llamando al número de atención a clientes o en la sucursal más cercana."]
+  },
+  {"tag":  "recomendacion",
+    "patterns":  ["¿Qué me recomiendas de Banorte?", "¿Cuál es el mejor servicio de Banorte?", "¿Qué opinas de Banorte?"],
+    "responses": ["Banorte ofrece una amplia gama de servicios financieros, te recomiendo que explores su página web para encontrar el que mejor se adapte a tus necesidades."]
+  },
+  {"tag": "productos",
+    "patterns": ["¿Qué productos ofrece Banorte?", "¿Cuáles son los servicios de Banorte?", "¿Qué puedo contratar en Banorte?"],
+    "responses": ["Banorte ofrece servicios bancarios, seguros, pensiones, inversiones y créditos."]
+  },
+  {"tag" : "inversion",
+    "patterns": ["¿Cómo invertir en Banorte?", "¿Qué opciones de inversión tiene Banorte?", "¿Cómo hacer crecer mi dinero en Banorte?", "Como funciona la inversion en Banorte?", "Como puedo invertir en Banorte?"],
+    "responses": ["Puedes invertir en Banorte a través de fondos de inversión, cetes, acciones, bonos y otros instrumentos financieros."]
   }
-]
-}
+]}
