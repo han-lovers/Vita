@@ -10,6 +10,7 @@ from vita import settings
 from django.http import HttpResponse
 from PIL import Image
 from img_recon.vision_ine import vision_ine
+from img_recon.contrast import contrast
 import os
 import pandas as pd
 
@@ -99,7 +100,40 @@ def face_upload(request):
             with open(image_path, 'wb+') as destination:
                 for chunk in img.chunks():
                     destination.write(chunk)
+            
+            # Determine the current directory where views.py is located
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+    
+            # Construct the full path to image_path.txt
+            ine_path_file = os.path.join(current_directory, 'image_path.txt')
 
+            # Open the file and read the content
+            with open(ine_path_file, 'r') as file:
+                ine_path = file.read().strip()  # Read the content and remove any extra whitespace
+            
+            # Create checker
+            checker = contrast()
+            
+            # Crop ine
+            print(ine_path)
+            checker.crop_imgs(ine_path, f'{current_directory}/photo_rect.png')
+
+            # Compare both images
+            checker.detect_and_crop_face(image_path, f'{current_directory}/output_photo.png') # outputs photo_rect.png
+            succesfull = checker.contrast_faces(f'{current_directory}/output_photo.png', f'{current_directory}/photo_rect.png')
+            
+            if(succesfull):
+                return redirect('signup_user')
+
+            return render(request, 'faceUpload.html', {
+                'form': ReceiveImageForm(),
+                'error': "Something went wrong. Please try again!",
+            })
+            # contraster.crop_imgs()
+        return render(request, 'faceUpload.html', {
+            'form': ReceiveImageForm(),
+            'error': "Something went wrong. Please try again!",
+        })
 
 
 # User Creation Form
@@ -144,4 +178,4 @@ def signup_user(request):
                 'form': UserForm,
                 'error': 'Username already exists',
             })        
-       return redirect('signup-user')        
+        return redirect('signup-user')        
