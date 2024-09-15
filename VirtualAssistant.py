@@ -65,6 +65,8 @@ def get_response(intents_list, intents_json):
 print('YAYAYA')
 while True:
     message = input('You: ')
+    if message == 'quit':
+        False
     ints = predict_class(message)
     respuesta = get_response(ints, intents)
     print(respuesta)
