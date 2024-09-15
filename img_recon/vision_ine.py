@@ -7,7 +7,7 @@ from datetime import datetime
 class vision_ine:
     def __init__(self):
         self.client = OpenAI()
-        pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'  # Update this path
+        pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/bin/tesseract'  # Update this path
         columns = ['primer_nombre', 'segundo_nombre', 'apellido_materno', 'apellido_paterno', 'calle', 'numero_exterior', 'numero_interior', 'colonia', 'codigo_postal', 'delegacion', 'ciudad', 'CURP', 'gender', 'edad', 'year', 'month', 'day']
         columns2 = ['CIC', 'ID']
         self.df2 = pd.DataFrame(columns=columns2)
