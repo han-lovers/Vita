@@ -1,12 +1,11 @@
-{% extends 'layouts/signupIneBase.html' %}
+{% extends 'layouts/faceUploadBase.html' %}
 
 {% block title %}Sign Up - Banorte{% endblock %}
 
 {% block content %}
 <section class="signup-section">
-    <form action="{% url 'faceUpload' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="photo">Sube una foto de tu INE</label>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="photo">Sube una foto de tu cara</label>
         <input type="file" id="photo" name="photo" accept="image/*" required>
         <button type="submit">Upload Photo</button>
     </form>
