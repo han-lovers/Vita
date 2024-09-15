@@ -3,5 +3,7 @@ README.md
 db.sqlite3
 __pycache__
 .env
-*.png
-*.csv
+adress_rect.png
+curp_rect.png
+name_rect.png
+output.csv
